@@ -9,10 +9,10 @@ When you run the service `config_check.run` it will generate a persistent_notifi
 
 ### Example results
 
-**Configuration is OK**
+**Configuration is OK**  
 ![exampleok][exampleimgok]
 
-**Configuration have issues**
+**Configuration have issues**  
 ![exampleerror][exampleimgerror]
 
 ## Installation
