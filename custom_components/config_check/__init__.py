@@ -8,7 +8,7 @@ import logging
 from subprocess import Popen, PIPE
 
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 
 NOTIFYID = '1337'
 
@@ -46,7 +46,8 @@ async def run_check(path):
     if run is None:
         try:
             run = Popen(
-                ["homeassistant", "--script", "check_config", "-c", path, "-i"],
+                ["python", "-m", "homeassistant", "--script", "check_config",
+                 "-c", path, "-i"],
                 stdin=PIPE, stdout=PIPE, stderr=PIPE)
         except Exception as error:  # pylint: disable=broad-except
             _LOGGER.debug('Could not find homeassistant - %s', error)
