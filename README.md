@@ -34,11 +34,20 @@ config_check.run
 
 You can add service data to the service call to make it run a service if it completes successfully.
 
-**example:**
+**examples:**
 
 ```json
 {
   "service": "script.chek_ok"
+}
+```
+
+```json
+{
+  "service": "switch.turn_on",
+  "service_data": {
+    "entity_id": "switch.my_switch"
+  }
 }
 ```
 
