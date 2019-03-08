@@ -32,6 +32,16 @@ config_check:
 config_check.run
 ```
 
+You can add service data to the service call to make it run a service if it completes successfully.
+
+**example:**
+
+```json
+{
+  "service": "script.chek_ok"
+}
+```
+
 ***
 
 [exampleimgok]: example_ok.png
