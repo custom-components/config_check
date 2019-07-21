@@ -1,7 +1,6 @@
 # config_check
 
 [![BuyMeCoffee][buymecoffeebedge]][buymecoffee]
-[![custom_updater](https://img.shields.io/badge/custom__updater-true-success.svg)](https://github.com/custom-components/custom_updater)
 
 _Run the CLI config_check from a service call._
 
