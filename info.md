@@ -5,9 +5,11 @@ When you run the service `config_check.run` it will generate a persistent_notifi
 ### Example results
 
 **Configuration is OK**
+
 ![exampleok](https://github.com/custom-components/config_check/raw/master/example_ok.png)
 
 **Configuration have issues**
+
 ![exampleerror](https://github.com/custom-components/config_check/raw/master/example_error.png)
 
 
