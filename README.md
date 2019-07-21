@@ -8,16 +8,16 @@ When you run the service `config_check.run` it will generate a persistent_notifi
 
 ### Example results
 
-**Configuration is OK**  
+**Configuration is OK**
 ![exampleok][exampleimgok]
 
-**Configuration have issues**  
+**Configuration have issues**
 ![exampleerror][exampleimgerror]
 
 ## Installation
 
-To get started put `/custom_components/config_check/__init__.py` here:  
-`<config directory>/custom_components/config_check/__init__.py`
+To get started put all the files from `/custom_components/config_check/` here:
+`<config directory>/custom_components/config_check/`
 
 ## Example configuration.yaml
 
