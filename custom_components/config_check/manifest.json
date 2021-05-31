@@ -1,4 +1,5 @@
 {
+    "version": "0.1.0",
     "domain": "config_check",
     "name": "Config Check",
     "documentation": "https://github.com/custom-components/config_check",
