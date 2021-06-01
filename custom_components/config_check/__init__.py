@@ -103,7 +103,8 @@ def remove_last_line_from_string(string):
     if "Invalid config" not in string:
         result = string[: string.rfind("\n")]
 
-    """Remove '(See' at end of string."""
+    # Remove '(See' at end of string
+
     result = re.sub(". \(See $", ".", result)
 
     return result
