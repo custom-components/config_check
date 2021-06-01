@@ -4,7 +4,9 @@ Run the CLI config_check from a service call.
 For more details about this component, please refer to the documentation at
 https://github.com/custom-components/config_check
 """
-import re, logging
+import re
+import logging
+
 from subprocess import Popen, PIPE
 
 NOTIFYID = "1337"
