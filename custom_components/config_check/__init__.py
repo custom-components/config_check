@@ -129,7 +129,8 @@ def clear_result(string):
     """Remove HA colorlog install attempt, regardless of version """
     string = re.sub("^.*?INFO:homeassistant.util.package:Attempting install of colorlog.*", "", string)
 
-    """Remove escape characters /"""
+    # Remove escape characters /
+
     string = string.encode('ascii', 'ignore').decode('unicode_escape')
 
     """Remove everything before Failed config."""
