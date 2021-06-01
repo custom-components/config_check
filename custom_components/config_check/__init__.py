@@ -4,7 +4,9 @@ Run the CLI config_check from a service call.
 For more details about this component, please refer to the documentation at
 https://github.com/custom-components/config_check
 """
+import re
 import logging
+
 from subprocess import Popen, PIPE
 
 NOTIFYID = "1337"
@@ -96,15 +98,21 @@ async def run_check(path):
 
 
 def remove_last_line_from_string(string):
-    """Remove last line from string."""
-    result = string[: string.rfind("\n")]
+    """Remove last line from string if it doesn't contain Invalid Config."""
+    result = string
+    if "Invalid config" not in string:
+        result = string[: string.rfind("\n")]
+
+    # Remove '(See' at end of string
+
+    result = re.sub(". \(See $", ".", result)
+
     return result
 
 
 def clear_result(string):
     """Clear out unwanted stuff from the result."""
     clear_out = [
-        "INFO:homeassistant.util.package:Attempting install of colorlog==4.0.2\n",
         "Testing configuration at /config",
         "homeassistant:",
         "General Errors:",
@@ -119,6 +127,14 @@ def clear_result(string):
     for clear in clear_out:
         string = string.replace(clear, "")
 
-    string = string.replace("Failed config", "**Failed config**")
+    """Remove HA colorlog install attempt, regardless of version """
+    string = re.sub("^.*?INFO:homeassistant.util.package:Attempting install of colorlog.*", "", string)
+
+    # Remove escape characters /
+
+    string = string.encode('ascii', 'ignore').decode('unicode_escape')
+
+    """Remove everything before Failed config."""
+    string = re.sub("^.*?Failed config", "**Failed config**", string)
 
     return string.split("?")[0]
